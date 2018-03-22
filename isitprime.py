@@ -1,4 +1,4 @@
-# This code has a few issues when not prime numbers are inputted, but that's the only problem I've encountered.
+# This code has a few issues when not prime numbers are inputted. The output prints "Not Prime Not Prime Not Prime" etc. It has something to do with the for loop, but I'm not sure if it needs a break or something else.
 
 n = input()
 # make sure n is a positive integer
