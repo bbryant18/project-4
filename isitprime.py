@@ -1,26 +1,34 @@
-# This code has a few issues when not prime numbers are inputted. The output prints "Not Prime Not Prime Not Prime" etc. It has something to do with the for loop, but I'm not sure if it needs a break or something else.
+#!/usr/bin/env python
 
-n = input()
+# Fixed issues
+
+a = input("Pick a number: ")
 # make sure n is a positive integer
-n = abs(int(n))
+n = abs(int(a))
+# Counter used to help determine if number is prime or not
+y = 0
 
 # 0 and 1 are not primes
 if n < 2:
-    print("Not Prime")
+    y += 1
 
   # 2 is the only even prime number
-if n == 2: 
-    print("Prime")    
-  
-    # all other even numbers are not primes
-if not n & 1: 
-    print("Not Prime")
+elif n == 2:
+    y = 0
 
-    # range starts with 3 and only needs to go up 
+    # all other even numbers are not primes
+elif not n & 1:
+    y += 1
+
+    # range starts with 3 and only needs to go up
     # the square root of n for all odd numbers
+
 for x in range(3, int(n**0.5) + 1, 2):
     if n % x == 0:
-      print("Not Prime")
-    else:
-      print("Prime")
-    break
+      y = y + 1
+      break
+
+if y >= 1:
+        print("Not Prime")
+else:
+        print("Prime")
