@@ -32,5 +32,3 @@ if y >= 1:
         print("Not Prime")
 else:
         print("Prime")
-
-print("howdy")
