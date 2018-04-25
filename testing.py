@@ -30,9 +30,14 @@ def datest():
     }
     
     
+    ip = os.getenv('API_URL', None)
+    print(ip)
+    if ip==None:
+        print("Error: There is no URL specified. Please set the API_URL environment variable and try again.")
+        return 1
     for uri, test_result in api_testing.items():
         print (" * "), uri, ("... "),
-        resp = requests.get('http://localhost:5000'+uri)
+        resp = requests.get('http://'+ip+uri)
         if resp.status_code == test_result[0]:
             if test_result[1] == None or resp.json()['output'] == test_result[1]:
                 print("Testing: "+uri+":::::")
