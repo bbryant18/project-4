@@ -1,5 +1,5 @@
 import math
 
-n = input()
+n = 65
 f = math.factorial(int(n))
 print(f)
